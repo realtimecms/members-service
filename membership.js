@@ -1,5 +1,3 @@
-const app = require('./app.js')
-
 const definition = require('./definition.js')
 
 const User = definition.foreignModel('users', 'User')
@@ -371,7 +369,7 @@ definition.event({
 definition.event({
   name: "listTimeChanged",
   async execute({ listType, list, time }) {
-    await Membership.indexRangeUpdate("listMembers", [ listType, list ], { time })
+    await Membership.indexRangeUpdate("listMembers", { time }, [ listType, list ])
   }
 })
 

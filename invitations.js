@@ -1,5 +1,3 @@
-const app = require('./app.js')
-
 const definition = require('./definition.js')
 
 const User = definition.foreignModel('users', 'User')
